@@ -134,22 +134,22 @@ java -jar target/project-demo-five.jar
         "mgi_gene_acc_id": "MGI:99604",
         "human_gene_relation_details": [
             {
-            "human_gene": {
-                "human_gene_id": "9024"
-            },
-            "support_count": 12
-            },
-            {
-            "human_gene": {
-                "human_gene_id": "9040"
-            },
-            "support_count": 1
+	            "human_gene": {
+	                "human_gene_id": "9024"
+	            },
+	            "support_count": 12
             },
             {
-            "human_gene": {
-                "human_gene_id": "9041"
+	            "human_gene": {
+	                "human_gene_id": "9040"
+	            },
+	            "support_count": 1
             },
-            "support_count": 1
+            {
+	            "human_gene": {
+	                "human_gene_id": "9041"
+	            },
+	            "support_count": 1
             }
         ]
     }
@@ -171,22 +171,22 @@ java -jar target/project-demo-five.jar
         "mgi_gene_acc_id": "MGI:99604",
         "human_gene_relation_details": [
             {
-            "human_gene": {
-                "human_gene_id": "9024"
-            },
-            "support_count": 12
-            },
-            {
-            "human_gene": {
-                "human_gene_id": "9040"
-            },
-            "support_count": 1
+	            "human_gene": {
+	                "human_gene_id": "9024"
+	            },
+	            "support_count": 12
             },
             {
-            "human_gene": {
-                "human_gene_id": "9041"
+	            "human_gene": {
+	                "human_gene_id": "9040"
+	            },
+	            "support_count": 1
             },
-            "support_count": 1
+            {
+	            "human_gene": {
+	                "human_gene_id": "9041"
+	            },
+	            "support_count": 1
             }
         ]
     }
