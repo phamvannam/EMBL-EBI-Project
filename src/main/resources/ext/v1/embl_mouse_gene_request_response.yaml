@@ -1,0 +1,107 @@
+swagger: "2.0"
+info:
+  version: "1"
+  title: API responses
+paths: {}
+
+definitions:
+  MouseGeneDetailResponse:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+        description: The name of Mouse gene
+        example: RIKEN cDNA 1700088E04 gene
+      symbol:
+        type: string
+        description: The symbol of Mouse gene
+        example: 1700088E04Rik
+      mgi_gene_acc_id:
+        type: string
+        description:
+        example: MGI:1920774
+  MouseGeneDetaiWithSynonymlResponse:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+        description: The name of Mouse gene
+        example: RIKEN cDNA 1700088E04 gene
+      symbol:
+        type: string
+        description: The symbol of Mouse gene
+        example: 1700088E04Rik
+      mgi_gene_acc_id:
+        type: string
+        description:
+        example: MGI:1920774
+      synonyms:
+        type: array
+        description: The list of Mouse gene synonyms
+        items:
+          type: string
+          example: Aigf
+  MouseGeneSearchRequest:
+    description: request body
+    type: object
+    required:
+      - key_work
+      - size
+      - page
+    properties:
+      key_work:
+        type: string
+        description: This should permit interrogation by a mouse gene symbol (e.g. Fgf8) or identifier (e.g. MGI:99604).
+        example: Fgf8
+      size:
+        type: number
+        description: The number of return item. Default value is 25
+        example: 25
+      page:
+        type: number
+        description: The number of page in pagingation request. Page is start from 0.
+        example: 0
+  HumanGeneObject:
+    type: object
+    properties:
+      human_gene_id:
+        type: number
+        description: The id of Human gene
+        example: 2311
+
+  HumanGeneRelationDetails:
+    type: object
+    properties:
+      human_gene:
+        type: object
+        $ref: "#/definitions/HumanGeneObject"
+      support_count:
+        type: number
+        description: The number of algorithms and predictions supporting the relationship
+        example: 20
+
+  MouseGeneRelationResponse:
+    type: object
+    properties:
+      id:
+        type: number
+      name:
+        type: string
+        description: The name of Mouse gene
+        example: RIKEN cDNA 1700088E04 gene
+      symbol:
+        type: string
+        description: The symbol of Mouse gene
+        example: 1700088E04Rik
+      mgi_gene_acc_id:
+        type: string
+        description:
+        example: MGI:1920774
+      human_gene_relation_details:
+        type: array
+        items:
+          $ref: "#/definitions/HumanGeneRelationDetails"

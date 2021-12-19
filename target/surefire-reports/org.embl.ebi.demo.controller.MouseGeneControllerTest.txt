@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.embl.ebi.demo.controller.MouseGeneControllerTest
+-------------------------------------------------------------------------------
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.324 s - in org.embl.ebi.demo.controller.MouseGeneControllerTest

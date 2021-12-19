@@ -1,0 +1,51 @@
+swagger: "2.0"
+info:
+  version: "1"
+  title: API responses
+
+paths:
+  /mouse_gene/{id}:
+    parameters:
+      - $ref: "./embl_parameters.yaml#/parameters/mouse_gene_id"
+    get:
+      operationId: get_mouse_gene_detail_by_id
+      summary: "GET:  Mouse Gene's detail by id"
+      description: Return the full Mouse Gene detail
+      tags:
+        - mouse gene
+      responses:
+        '200':
+          description: Mouse Gene's detail
+          schema:
+            $ref: "embl_mouse_gene_request_response.yaml#/definitions/MouseGeneDetailResponse"
+  /mouse_gene:
+    parameters:
+      - $ref: "./embl_parameters.yaml#/parameters/symbol"
+      - $ref: "./embl_parameters.yaml#/parameters/mgi_gene_acc_id"
+      - $ref: "./embl_parameters.yaml#/parameters/synonym"
+    get:
+      operationId: get_mouse_gene_detail
+      summary: "GET:  Mouse Gene's detail by query"
+      description: Return the full Mouse Gene detail by query param `symbol` or `mgi_gene_acc_id` or `synonym`. Just used one param at a same time
+      tags:
+        - mouse gene
+      responses:
+        '200':
+          description: Mouse Gene's detail with mouse gene symbols and synonyms
+          schema:
+            $ref: "embl_mouse_gene_request_response.yaml#/definitions/MouseGeneDetaiWithSynonymlResponse"
+  /mouse_gene/relations:
+    parameters:
+      - $ref: "./embl_parameters.yaml#/parameters/symbol"
+      - $ref: "./embl_parameters.yaml#/parameters/mgi_gene_acc_id"
+    get:
+      operationId: get_mouse_gene_relations
+      summary: "GET: The Mouse Gene and Human Gene relation by query"
+      description: Return the Mouse Gene detail and relation between mouse and human genes by query param `symbol` or `mgi_gene_acc_id`. Just used one param at a same time
+      tags:
+        - mouse gene relations
+      responses:
+        '200':
+          description: The Mouse Gene detail and relation between mouse and human genes
+          schema:
+            $ref: "embl_mouse_gene_request_response.yaml#/definitions/MouseGeneRelationResponse"

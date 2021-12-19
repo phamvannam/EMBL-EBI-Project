@@ -1,0 +1,50 @@
+swagger: '2.0'
+info:
+  title: EMBL-EBI REST API
+  version: "1"
+  description: |-
+    Last updated date: **{{updateDate}}**
+
+  contact:
+    name: EMBL-EBI API Support
+    url: httpss://embl.org
+    email: support@embl.org
+  x-logo:
+    url: embl-logo.png
+    backgroundColor: "#ffffff"
+
+schemes:
+  - https
+
+tags:
+  - name: Introduction
+    description: |-
+      The EMBL APIv1 is a REST API.
+
+      By utilizing the EMBL APIv1, you hereby agree to be bound by **EMBL-EBI** **[Terms of Service](www.embl.org/terms-of-service)**.
+  - name: General information
+    description: |+
+      ## EMBL-EBI API Model Concept
+      A common nomenclature is used to describe human and mouse genes. This provides the basis for communication and shared understanding in the scientific community when discussing genetic results and provides interoperability between data resources. The authority for human gene nomenclature is HGNC (https://www.genenames.org) located at EBI, while the authority for mouse gene nomenclature is the Mouse Genome Informatics resource (MGI) (http://www.informatics.jax.org). These authorities approve and assign a name, a unique symbol (often a short-form abbreviation of the name), and an identifier to each gene. Although the first complete sequences of the mouse and human genomes were obtained over 20 years ago genes are still being renamed and even discovered. The identifiers which are associated with the DNA sequence of the gene will stay the same even if the nomenclature is updated so are often preferred when databases exchange information, while biologists and clinicians tend to use the gene names and symbols. The nomenclature authorities publish updates on a weekly basis (MGI) and daily basis (HGNC) that provide both the current nomenclature for the genes and the previous symbols associated with the gene, which are referred to as gene synonyms.
+
+      At IMPC we generate a reference database every week that integrates the information published by MGI and HGNC to support our web services. The reference database contains information about the human and mouse genes and their synonyms, predictions about the relationship between human and mouse genes, as well as some additional information on diseases.
+
+  - name: mouse gene
+    description: |
+      The information of Mouse gene
+  - name: mouse gene relations
+    description: |
+      The information of Mouse gene and relation between mouse and human genes
+# will be prefixed to all paths
+basePath: /api/v1
+consumes:
+  - application/json
+produces:
+  - application/json
+paths:
+  /mouse_gene/{id}:
+    $ref: "components/embl_mouse_gene.yaml#/paths/~1mouse_gene~1%7Bid%7D"
+  /mouse_gene:
+    $ref: "components/embl_mouse_gene.yaml#/paths/~1mouse_gene"
+  /mouse_gene/relations:
+    $ref: "components/embl_mouse_gene.yaml#/paths/~1mouse_gene~1relations"
