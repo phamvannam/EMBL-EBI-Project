@@ -1,0 +1,51 @@
+---
+swagger: "2.0"
+info:
+  version: "2"
+  title: parameters
+
+paths: {}
+
+parameters:
+  symbol:
+    name: symbol
+    in: query
+    description: The gene's symbol. e.g. Fgf8
+    required: false
+    type: string
+  mgi_gene_acc_id:
+    name: mgi_gene_acc_id
+    in: query
+    description: The gene's mgi_gene_acc_id. e.g. MGI:99604
+    required: false
+    type: string
+  synonym:
+    name: synonym
+    in: query
+    description: The gene's synonym. e.g. Aigf
+    required: false
+    type: string
+  mouse_gene_id:
+    name: mouse_gene_id
+    in: path
+    description: ID of mouse gene
+    required: true
+    type: number
+  symbol_required:
+    name: symbol
+    in: query
+    description: The gene's symbol. e.g. Fgf8
+    required: true
+    type: string
+  mgi_gene_acc_id_required:
+    name: mgi_gene_acc_id
+    in: query
+    description: The gene's mgi_gene_acc_id. e.g. MGI:99604
+    required: true
+    type: string
+  synonym_required:
+    name: synonym
+    in: query
+    description: The gene's synonym. e.g. Aigf
+    required: true
+    type: string

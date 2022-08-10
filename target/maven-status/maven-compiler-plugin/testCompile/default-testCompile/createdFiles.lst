@@ -1,0 +1,6 @@
+org/embl/ebi/demo/test/BaseTest.class
+org/embl/ebi/demo/mapper/manual/MouseGeneManualMapperTest.class
+org/embl/ebi/demo/controller/MouseGeneControllerTest$MouseGeneControllerTestConfiguration.class
+org/embl/ebi/demo/service/MouseGeneServiceImplTest.class
+org/embl/ebi/demo/service/MouseGeneSynonymServiceImplTest.class
+org/embl/ebi/demo/controller/MouseGeneControllerTest.class
